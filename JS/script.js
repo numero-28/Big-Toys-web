@@ -1,28 +1,21 @@
 $(document).ready(function () {
+    const $colIzq = $('.col-izq');
+    const $colDer = $('.col-der');
+    
+    const $izqOriginal = $colIzq.children().clone();
+    const $derOriginal = $colDer.children().clone();
 
-<<<<<<< Updated upstream
     $colIzq.append($izqOriginal);
     $colDer.append($derOriginal);
-=======
-    const $izqScroll = $('.col-izq .col-scroll');
-    const $derScroll = $('.col-der .col-scroll');
->>>>>>> Stashed changes
 
-    const $izqOriginal = $izqScroll.children().clone();
-    const $derOriginal = $derScroll.children().clone();
-
-    $izqScroll.append($izqOriginal);
-    $derScroll.append($derOriginal);
-
-
-    $('.col-izq').on('mouseenter', function () {
-        $izqScroll.addClass('active');
-        $derScroll.removeClass('active');
+    $colIzq.on('mouseenter', function () {
+        $colIzq.css('overflow-y', 'auto');
+        $colDer.css('overflow-y', 'hidden');
     });
 
-    $('.col-der').on('mouseenter', function () {
-        $derScroll.addClass('active');
-        $izqScroll.removeClass('active');
+    $colDer.on('mouseenter', function () {
+        $colDer.css('overflow-y', 'auto');
+        $colIzq.css('overflow-y', 'hidden');
     });
 
     function setupInfiniteScroll($col) {
@@ -36,12 +29,14 @@ $(document).ready(function () {
             if (scrollTop >= originalHeight * 1.5) {
                 $col.scrollTop(scrollTop - originalHeight);
             }
-
             if (scrollTop <= originalHeight * 0.5) {
                 $col.scrollTop(scrollTop + originalHeight);
             }
         });
     }
-    setupInfiniteScroll($izqScroll);
-    setupInfiniteScroll($derScroll);
-});
+
+    setupInfiniteScroll($colIzq);
+    setupInfiniteScroll($colDer);
+
+  });
+  
