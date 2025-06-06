@@ -41,10 +41,12 @@ html, body {
 .col-izq,
 .col-der {
     width: 50%;
-    /* display: flex;
+    /* /* display: flex;
     flex-direction: column; */
+    position: relative; */
     position: relative;
     overflow-y: hidden;
+    height: 100vh;
     height: 100vh;
 }
 
