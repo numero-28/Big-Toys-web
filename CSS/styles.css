@@ -27,7 +27,7 @@
 
 html, body {
     height: 100%;
-    overflow-x: hidden; /* elimina scroll horizontal */
+    overflow-x: hidden;
 }
 
 .home-car {
@@ -50,7 +50,7 @@ html, body {
 
 .cover {
     width: 100%;
-    height: 105vh; /* si quieres que se vea más que la pantalla */
+    height: 105vh; 
     overflow: hidden;
     position: relative;
 }
