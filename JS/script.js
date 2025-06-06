@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     const $colIzq = $('.col-izq');
     const $colDer = $('.col-der');
@@ -5,8 +6,8 @@ $(document).ready(function () {
     const $izqOriginal = $colIzq.children().clone();
     const $derOriginal = $colDer.children().clone();
 
-  $izqScroll.append($izqOriginal);
-  $derScroll.append($derOriginal);
+    $colIzq.append($izqOriginal);
+    $colDer.append($derOriginal);
 
     $colIzq.on('mouseenter', function () {
         $colIzq.css('overflow-y', 'auto');
