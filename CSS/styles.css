@@ -75,3 +75,24 @@ html, body {
     object-fit: cover;
     display: block;
 }
+
+.car-txts-cont {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    padding: 3rem;
+    z-index: 10;
+}
+.car-txts {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    color: var(--w);
+}
+.car-txts > div > span {
+    font-size: 1.5rem;
+}
