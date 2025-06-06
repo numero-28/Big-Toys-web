@@ -65,6 +65,28 @@ const homeTexts = [
 ];
 ;
 
+$('.col-izq .cover, .col-der .cover').each(function(index) {
+  $(this).attr('data-home-text', index);
+});
+
+
+$('.cover').on('mouseenter', function () {
+  const index = $(this).data('home-text');
+  updateCarTexts(index);
+});
+
+function updateCarTexts(index) {
+  const data = homeTexts[index];
+  if (!data) return;
+
+  $('.car-txts .name span').text(data.name);
+  $('.car-txts .place span').text(data.place);
+  $('.car-txts .brand span').text(data.brand);
+  $('.car-txts .industry span').text(data.industry);
+  $('.car-txts .area span').text(data.area);
+}
+
+
 
 
 
