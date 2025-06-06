@@ -1,4 +1,11 @@
 $(document).ready(function () {
+
+
+
+
+
+
+  
   const $izqScroll = $('.col-izq .col-scroll');
   const $derScroll = $('.col-der .col-scroll');
 
