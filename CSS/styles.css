@@ -38,6 +38,7 @@ html, body {
     overflow-y: hidden;
     height: 100vh;
     height: 100vh;
+    scrollbar-width: none;
 }
 
 .cover {
