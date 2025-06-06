@@ -40,6 +40,7 @@
 //   });
 // });
 
+$(document).ready(function () {
     const $colIzq = $('.col-izq');
     const $colDer = $('.col-der');
 
