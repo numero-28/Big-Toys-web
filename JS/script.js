@@ -41,6 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const $colIzq = $('.col-izq');
     const $colDer = $('.col-der');
 
+    const $izqOriginal = $colIzq.children().clone();
+    const $derOriginal = $colDer.children().clone();
+
+    $colIzq.append($izqOriginal);
+    $colDer.append($derOriginal);
+
     $colIzq.on('mouseenter', function () {
         $colIzq.css('overflow-y', 'auto');
         $colDer.css('overflow-y', 'hidden');
@@ -51,12 +57,28 @@ document.addEventListener('DOMContentLoaded', () => {
         $colIzq.css('overflow-y', 'hidden');
     });
 
-    $colIzq.on('mouseleave', function () {
-        $colIzq.css('overflow-y', 'hidden');
-    });
+    function setupInfiniteScroll($col) {
+      const originalHeight = $col[0].scrollHeight / 2;
+  
+      // Empieza en el centro (parte duplicada)
+      $col.scrollTop(originalHeight);
+  
+      $col.on('scroll', function () {
+          const scrollTop = $col.scrollTop();
+  
+          // Cuando llegas al final visual (parte duplicada completa), vuelve al centro
+          if (scrollTop >= originalHeight * 1.5) {
+              $col.scrollTop(scrollTop - originalHeight);
+          }
+  
+          // Cuando llegas al principio visual, vuelve al centro
+          if (scrollTop <= originalHeight * 0.5) {
+              $col.scrollTop(scrollTop + originalHeight);
+          }
+      });
+  }
 
-    $colDer.on('mouseleave', function () {
-        $colDer.css('overflow-y', 'hidden');
-    });
+    setupInfiniteScroll($colIzq);
+    setupInfiniteScroll($colDer);
   });
   
