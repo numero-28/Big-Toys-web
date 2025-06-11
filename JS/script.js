@@ -69,6 +69,16 @@ $('.col-izq .cover, .col-der .cover').each(function(index) {
   $(this).attr('data-home-text', index);
 });
 
+$(document).ready(function () {
+    const $colIzq = $('.col-izq');
+    const $colDer = $('.col-der');
+    
+    const $izqOriginal = $colIzq.children().clone();
+    const $derOriginal = $colDer.children().clone();
+
+    $colIzq.append($izqOriginal);
+    $colDer.append($derOriginal);
+})
 
 $('.cover').on('mouseenter', function () {
   const index = $(this).data('home-text');
